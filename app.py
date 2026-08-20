@@ -258,3 +258,5 @@ if __name__ == "__main__":
         port=5000,
         debug=True
     )
+password = "SuperSecret123"
+AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"
