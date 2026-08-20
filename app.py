@@ -259,5 +259,5 @@ if __name__ == "__main__":
         debug=True
     )
 password = "TEST_PASSWORD_NOT_A_SECRET"
-AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"
-GITHUB_TOKEN = "TEST_GITHUB_TOKEN"
+AWS_ACCESS_KEY_ID = "TEST_AWS_KEY"
+GITHUB_TOKEN = "ghp_1234567890abcdefghijklmnopqrstuvwxyz"
