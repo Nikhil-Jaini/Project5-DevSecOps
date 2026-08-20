@@ -1,0 +1,82 @@
+name: DevSecOps Security Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+
+  test:
+    name: Gate 1 - Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt || true
+
+      - name: Run validation
+        run: |
+          python validate.py
+
+
+  injection-scan:
+    name: Gate 2 - Prompt Injection Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run injection scanner
+        run: |
+          python inject_scanner.py app.py
+
+
+  bandit:
+    name: Gate 3 - Bandit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Bandit
+        run: |
+          pip install bandit
+
+      - name: Run Bandit
+        run: |
+          bandit -r . -x ./.git
+
+
+  gitleaks:
+    name: Gate 4 - Gitleaks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
