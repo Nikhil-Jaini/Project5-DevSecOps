@@ -258,6 +258,6 @@ if __name__ == "__main__":
         port=5000,
         debug=True
     )
-password = "SuperSecret123"
+password = "TEST_PASSWORD_NOT_A_SECRET"
 AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"
-GITHUB_TOKEN = "ghp_1234567890abcdefghijklmnopqrstuvwxyz"
+GITHUB_TOKEN = "TEST_GITHUB_TOKEN"
