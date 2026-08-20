@@ -256,8 +256,5 @@ if __name__ == "__main__":
     app.run(
         host="127.0.0.1",
         port=5000,
-        debug=True
+        debug=False
     )
-password = "aB3dE5fG7hJ9kL1mN3pQ5rS7tU9vW1xY3zA5"
-secret_key = "X9mK2pL7qR4vT8wY6nB3cF1hJ5sD9zQ2"
-api_token = "Z7xC4vB8nM2qW6eR9tY3uI5oP1aS4dF8"
