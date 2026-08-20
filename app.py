@@ -260,3 +260,4 @@ if __name__ == "__main__":
     )
 password = "SuperSecret123"
 AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"
+GITHUB_TOKEN = "ghp_1234567890abcdefghijklmnopqrstuvwxyz"
