@@ -258,6 +258,6 @@ if __name__ == "__main__":
         port=5000,
         debug=True
     )
-password = "TEST_PASSWORD_NOT_A_SECRET"
-AWS_ACCESS_KEY_ID = "TEST_AWS_KEY"
-GITHUB_TOKEN = "ghp_1234567890abcdefghijklmnopqrstuvwxyz"
+password = "aB3dE5fG7hJ9kL1mN3pQ5rS7tU9vW1xY3zA5"
+secret_key = "X9mK2pL7qR4vT8wY6nB3cF1hJ5sD9zQ2"
+api_token = "Z7xC4vB8nM2qW6eR9tY3uI5oP1aS4dF8"
